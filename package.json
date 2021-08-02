@@ -1,0 +1,23 @@
+{
+  "name": "Performance_Example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/And4Web/NODE_Performance_Example.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/And4Web/NODE_Performance_Example/issues"
+  },
+  "homepage": "https://github.com/And4Web/NODE_Performance_Example#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
