@@ -9,6 +9,10 @@ function delay(duration){
 };
 
 app.get('/', (req, res) => {
+  //examples of some real life functions that block the event loop:
+  //JSON.stringify({}) => "{}"
+  //JSON.parse("{}") => {}
+  //array.sort()
   res.send('Performance Example.')
 });
 
