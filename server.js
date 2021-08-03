@@ -20,10 +20,12 @@ app.get('/', (req, res) => {
 
 app.get('/timer', (req, res) => {
   //delay the response:
-  delay(5000);
+  delay(7000);
 
   res.send(`DING DING... ${process.pid}`);
 });
+
+console.log('Running server.js...')
 
 if(cluster.isMaster){
   console.log('Master has been started...');
