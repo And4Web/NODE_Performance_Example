@@ -14,14 +14,14 @@ app.get('/', (req, res) => {
   //JSON.stringify({}) => "{}"
   //JSON.parse("{}") => {}
   //array.sort()
-  res.send('Performance Example.')
+  res.send(`Performance Example: ${process.pid}`)
 });
 
 app.get('/timer', (req, res) => {
   //delay the response:
   delay(5000);
 
-  res.send('DING DING...');
+  res.send(`DING DING... ${process.pid}`);
 });
 
 if(cluster.isMaster){
