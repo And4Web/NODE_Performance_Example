@@ -24,4 +24,9 @@ app.get('/timer', (req, res) => {
   res.send('DING DING...');
 });
 
+if(cluster.isMaster){
+  console.log('Master has been started...');
+}else{
+  console.log('Worker Process started...');
+}
 app.listen(3000);
