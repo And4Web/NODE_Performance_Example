@@ -32,7 +32,8 @@ console.log('Running server.js...')
 
 
 if(cluster.isMaster){
-  const NUM_WORKERS = os.cpus().length;//it gives the amount of logocal cores.
+  const NUM_WORKERS = os.cpus().length; //it gives the amount of logocal cores.
+  console.log(`Number of Logical Cores in my Machine: ${NUM_WORKERS}`)
   
   console.log('Master has been started...');
      
