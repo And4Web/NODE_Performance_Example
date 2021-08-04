@@ -29,8 +29,12 @@ console.log('Running server.js...')
 
 if(cluster.isMaster){
   console.log('Master has been started...');
-  cluster.fork();
-  cluster.fork();
+
+  const NUM_WORKERS = os.cpus().length;//it gives the amount of logocal cores. 
+  for(i=0; i<NUM_WORKERS; i++){
+    cluster.fork();
+  }
+
 }else{
   console.log('Worker Process started...');
   app.listen(3000);
