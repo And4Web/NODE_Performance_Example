@@ -1,6 +1,9 @@
 const express = require('express');
 const cluster = require('cluster');
-const { fork } = require('child_process');
+const os = require('os');
+
+//const { fork } = require('child_process');
+
 const app = express();
 
 function delay(duration){
@@ -27,10 +30,12 @@ app.get('/timer', (req, res) => {
 
 console.log('Running server.js...')
 
-if(cluster.isMaster){
-  console.log('Master has been started...');
 
-  const NUM_WORKERS = os.cpus().length;//it gives the amount of logocal cores. 
+if(cluster.isMaster){
+  const NUM_WORKERS = os.cpus().length;//it gives the amount of logocal cores.
+  
+  console.log('Master has been started...');
+     
   for(i=0; i<NUM_WORKERS; i++){
     cluster.fork();
   }
