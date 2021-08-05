@@ -1,6 +1,6 @@
 const express = require('express');
-const cluster = require('cluster');
-const os = require('os');
+//const cluster = require('cluster');
+//const os = require('os');
 
 //const { fork } = require('child_process');
 
@@ -30,7 +30,7 @@ app.get('/timer', (req, res) => {
 
 console.log('Running server.js...')
 
-if(cluster.isMaster){
+/*if(cluster.isMaster){
   const NUM_WORKERS = os.cpus().length; //it gives the amount of logocal cores.
   console.log(`Number of Logical Cores in my Machine: ${NUM_WORKERS}`)
   
@@ -40,7 +40,7 @@ if(cluster.isMaster){
     cluster.fork();
   }
 
-} else{
+} else{*/
   console.log('Worker Process started...');
   app.listen(3000);
-}
+//}
